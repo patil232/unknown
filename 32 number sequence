@@ -1,0 +1,67 @@
+Aim : Compute the DFT by wriƟng a funcƟon for the N>32 sequence. Calculate the computaƟonal complexity. Compare the Ɵme required by DFT & FFT funcƟons.
+
+Input:
+N = input('Enter the value of N(value of N in N-Point DFT)'); 
+x= input("Enter the sequence for which DFT is to be calculated");
+
+z=fft(x);
+
+disp('DFT of sequence'); z
+
+subplot(3,1,1);
+
+stem(x);
+
+xlabel('time-->');
+
+ylabel('amplitude--->');
+
+title('Input signal');
+
+subplot(3,1,2);
+
+stem(z);
+
+xlabel("time-->");
+
+ylabel('amplitude--->');
+
+title('DFT of sequence');
+
+z1=ifft(z);
+
+disp('IDFT of sequence'); z1
+
+subplot(3,1,3);
+
+stem(z1);
+
+xlabel("time--->");
+
+ylabel('amplitude--->');
+
+title("IDFT of sequence");
+
+d1=N*N;
+
+disp('Number of multiplication for DFT(NN)'); d1
+
+d2=(N*N)-N;
+
+disp("Number of additions for DFT (NN)-N;"); d2
+
+f1=(N/2*log2(N));
+
+disp('Number of multiplication for FFT=(N/2*log(N))');f1
+
+f2=N*log2(N);
+
+disp('Number of additions for FFT (N*log(N)');f2
+
+p1=d1/f1;
+
+disp("Speed improvement for multiplication by using FFT over DFT"); p1
+
+p2=d2/f2;
+
+disp("Speed improvement for addition by using FFT over DFT"); p2
