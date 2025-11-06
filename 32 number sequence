@@ -65,3 +65,28 @@ disp("Speed improvement for multiplication by using FFT over DFT"); p1
 p2=d2/f2;
 
 disp("Speed improvement for addition by using FFT over DFT"); p2
+
+using function
+
+
+N=input('Enter the value of N');
+x=input('Enter the sequence for DFT is to be calculated :');
+z1=fft(x);
+display('The DFT/FFT Signal is :');z1
+z2=ifft(z1);
+display('The DFT/IFFT Signal is :');z2
+p1=N.*N;
+display('The number of complex multiplication of DFT signal is :');p1
+p2 = N/2 .* log2(N);
+display('The number of complex multiplication of FFT signal is :');p2
+p=p1/p2;
+display('Speed improvement by using FFT over DFT :');p
+
+
+
+
+
+
+
+
+
