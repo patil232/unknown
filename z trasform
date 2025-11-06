@@ -1,0 +1,9 @@
+NR=input('Enter the value of numerator,NR=');
+DR=input('Enter the value of denominator,DR='); [r,p,k]=residuez(NR,DR);
+disp('zeros of the system');r
+disp('poles of the system');p
+disp('gain of the system');k
+[NR,DR]=residuez(r,p,k);
+disp('coefficient of numerator');NR
+disp('coe of denominator');DR
+zplane(NR,DR);
