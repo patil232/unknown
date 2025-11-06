@@ -1,0 +1,52 @@
+clc;
+N=input('enter the cofficient');
+wc=0.5*pi;
+A=(N-1)/2;
+esp=0.001;
+n=0:1:N-1;
+Hd=sin(wc*(n-A+esp))./(pi*(n-A+esp));
+disp('impulse responce of filter ');Hd
+wr=boxcar(N);
+disp('rectangular window cofficient');wr
+Hn=Hd.*wr';
+disp(Hn);
+w=0:0.01:pi;
+H=freqz(Hn,1,w);
+plot(w/pi,abs(H),'R');
+disp('result of rectangular window');Hn
+grid on;
+hold on;
+wh=hamming(N);
+disp('hamming window coefficient');wh
+Hn=Hd.*wh';
+w=0:0.01:pi;
+H=freqz(Hn,1,w);
+plot(w/pi,abs(H),'y');
+disp('hamming window coefficient');Hn
+grid on;
+hold on;
+wn=hanning(N);
+disp('hanning window coefficient');wn
+Hn=Hd.*wn';
+w=0:0.01:pi;
+H=freqz(Hn,1,w);
+plot(w/pi,abs(H),'G');
+disp('hanning window coefficient ');Hn
+grid on;
+hold on;
+wb=blackman(N);
+disp('blackman window coefficient');wb
+Hn=Hd.*wb';
+w=0:0.01:pi;
+H=freqz(Hn,1,w);
+plot(w/pi,abs(H),'B');
+disp('blackman WINDOWS COEFFICIENT ');Hn
+wt=bartlett(N);
+disp('bartlett window coefficient');wt
+Hn=Hd.*wt';
+w=0:0.01:pi;
+H=freqz(Hn,1,w);
+plot(w/pi,abs(H),'BLACK');
+disp('bartlett windows coefficient');Hn
+grid on;
+hold on;
