@@ -1,0 +1,41 @@
+clc;
+x=input('enter the first sequence');
+y=input('enter the second sequence');
+z=conv(x,y);
+display('output of linear convolution');z
+subplot(3,2,1);
+stem(x);
+xlabel('time');
+ylabel('amplitude');
+title('input first sequence');
+subplot(3,2,2);
+stem(y);
+xlabel('time');
+ylabel('amplitude');
+title('input second sequence');
+subplot(3,2,3);
+stem(z);
+xlabel('time');
+ylabel('amplitude');
+title('linear convolution');
+z1=cconv(x,y,4);
+display('circular convolution');z1
+subplot(3,2,4);
+stem(z1);
+xlabel('time');
+ylabel('amplitude')
+title('output of circular convolution');
+display('output of circular convolution');
+N1= length(x);
+N2=length(y);
+N=[(N1+N2)-1];
+x1=[x,zeros(1,N-N1)];
+y1=[y,zeros(1, N-N2)];
+z2=cconv(x1,y1,N);
+
+display('circular convolution using linear convolution');
+subplot(3,2,5);
+stem(z2);
+xlabel('time');
+ylabel('amplitude');
+title('circular convolution using linear convolution');z
