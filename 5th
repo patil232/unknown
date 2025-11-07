@@ -1,0 +1,4 @@
+PRACTICAL 5: 
+Implement IIR structures using Direct form I/ II/ Cascade form. Implement FIR structures using Direct Form/Cascade/Linear phase structures. 
+fs=2; fc=0.2; n=2; 
+[b,a]=butter(n,fc,'s'); disp('analog numerator');b disp('analog denominator');a [bz,az]=impinvar(b,a,fs); disp('digital numerator');bzdisp('digital denominator');az [h,f]=freqz(bz,az,512,fs); plot(f,20*log10(abs(h))),grid; xlabel('freq in hz'); ylabel('magnitude in db'); 
