@@ -39,3 +39,17 @@ stem(z2);
 xlabel('time');
 ylabel('amplitude');
 title('circular convolution using linear convolution');z
+
+
+
+AIM: Find N-point circular convolution using formula and verify its results. Implement linear filtering using circular convolution 
+clc 
+x=input('Enter the first sequence = ');
+ h=input('Enter the second sequence = '); 
+z=conv(x,h); 
+disp('Output of Linear Convolution');zsubplot(3,2,1); stem(x); xlabel('time'); ylabel('amplitude'); title('Input first sequence'); 
+subplot(3,2,2); stem(h); xlabel('time'); ylabel('amplitude'); title('Input second sequence'); subplot(3,2,3); stem(z); xlabel('time') ylabel('amplitude'); title('Linear Convolution'); z2=cconv(x,h,4); 
+display('Circular Convolution');z2 subplot(3,2,4); stem(z2); xlabel('time'); ylabel('amplitude'); title('Circular Convolution'); l1=length(x); l2=length(h); l=((12+11)-1); x1=[x,zeros(1,l-l1)]; h1=[h,zeros(1,l-l2)]; z3=cconv(x1,h1,l); 
+display('Circular Convolution using Linear Convolution');z3 subplot(3,2,5); stem(z3); xlabel('time'); ylabel('amplitude'); 
+title('Circular Convolution using Linear Convolution'); 
+
