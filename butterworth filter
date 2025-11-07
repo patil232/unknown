@@ -1,0 +1,14 @@
+Prac7:- Design a Second order band pass Digital Butterworth filter with passband of 200 Hz to 300 Hz and sampling frequency of 2000Hz using Bilinear Transformation. 
+fs=2; 
+fc=0.2;
+n=2; 
+[b,a]=butter(n,fc,'s'); 
+disp('analog numerator');
+b disp('analog denominator');
+a [bz,az]=bilinear(b,a,fs); 
+disp('digital numerator');
+bzdisp('digital denominator');
+az [h,f]=freqz(bz,az,512,fs);
+plot(f,20*log10(abs(h))),grid;
+xlabel('freq in hz');
+ylabel('magnitude in db'); 
