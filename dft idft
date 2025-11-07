@@ -1,0 +1,29 @@
+DFT 
+N=input('Enter the value of (value of N-point DFT)'); 
+x=input('Enter the sequence for which DFT is to be calculated');
+n=[0:1:N-1]; k=[0:1:N-1];
+WN=exp(-1j*2*pi/N);
+WNnk=WN.^(n'*k);
+xk=x*WNnk; 
+disp('the DFT ssequence');
+xkMagX=abs(xk); 
+PhaseX=angle(xk)*180/pi; 
+subplot(2,1,1); 
+plot(k,MagX); 
+title('magnitude plot of DFT');
+subplot(2,1,2); 
+plot(k,PhaseX);
+title('phase plot of DFT'); 
+
+
+IDFT 
+N=input('Enter the value of N(value of N in N-point DFT)'); Xk=input('Enter the sequence for which DFT is to be calculated'); n=[0:1:N-1]; k=[0:1:N-1]; 
+WN=exp(j*2*pi/N
+); 
+WNnk=WN.^(n'*k
+); 
+Xn=(Xk*WNnk)/N
+; 
+disp('The IDFT sequence');XnMagX=abs(Xn); 
+disp('The magnitude of IDFT');MagXPhaseX=angle(Xn)*180/pi; disp('The phase of IDFT');PhaseXsubplot(2,1,1); plot(k,MagX) 
+title('Magnitude plot of IDFT') subplot(2,1,2); plot(k,PhaseX); title('Phase plot of IDFT') 
