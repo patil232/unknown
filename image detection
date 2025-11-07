@@ -1,0 +1,19 @@
+I = imread("C:\Users\Admin\Desktop\DSP\red-flower-dahlias.webp");   % Read image
+imshow(I); title('Original Image');
+
+% Convert to grayscale if needed
+if size(I,3) == 3
+    I = rgb2gray(I);
+end
+
+% Edge detection
+BW1 = edge(I,'Canny');
+BW2 = edge(I,'Prewitt');
+BW3 = edge(I,'Sobel');
+
+% Show all results in subplots
+figure;
+subplot(2,2,1); imshow(I); title('Grayscale Image');
+subplot(2,2,2); imshow(BW1); title('Canny Edge Detection');
+subplot(2,2,3); imshow(BW2); title('Prewitt Edge Detection');
+subplot(2,2,4); imshow(BW3); title('Sobel Edge Detection');
